@@ -1,21 +1,22 @@
 #include "Duke.hpp"
 namespace coup
 {
+    static int numOfDukes = 0;
     Duke::Duke(Game &game, string name) : Player(game, name)
     {
-    }
-
-    Duke::~Duke()
-    {
-    }
-    void Duke::block(Player p){
-        cout<<"block\n";
-    }
-    void Duke::tax(){
-        cout<< "tax\n";
+        numOfDukes++;
     }
     void Duke::role(){
-        cout<<"duke"<<endl;
+        cout<<"roleDuke"<<endl;
     }
-
+    void Duke::tax(){
+        cout<< "taxDuke"<<endl;
+    }
+    void Duke::block(Player p){
+        cout<<"blockDuke"<<endl;
+    }
+    Duke::~Duke()
+    {
+        numOfDukes--;
+    }
 }
