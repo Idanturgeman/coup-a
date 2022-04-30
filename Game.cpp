@@ -1,42 +1,45 @@
 #include "Game.hpp"
 namespace coup{
+    static int numOfPlayers = 0;
+    static int numOfTurns = 0;
+    static int numOfGames = 0;
+    static int numOfWinners = 0;
+    Game::Game()
+    {
+        numOfGames++;
+        this->i = 0;
+    }
     vector<string> Game::players()
     {
-        int numOfPlayers = 0;
+        numOfPlayers++;
         return this->playersList;
     }
     string Game::turn()
     {
-        int numOfTurns = 0;
+        numOfTurns++;
         if (this->playersList.size() == 0)
         {
             throw runtime_error("their is no players in this game");
         }
-        int numOfTurn = 1;
+        numOfTurns++;
         i = i % playersList.size();
-        int numOfTur = 2;
+        numOfTurns++;
         return this->playersList[this->i];
     }
     string Game::winner()
     {
-        int numOfWinners = 0;
+        numOfWinners++;
         if (this->playersList.size() != 1)
         {
             throw runtime_error("their is no players in this game");
         }
-        int numOfWinner = 1;
+        numOfWinners++;
         i = i % playersList.size();
-        int numOfWinne = 2;
+        numOfWinners++;
         return this->playersList[this->i];
-    }
-    Game::Game(/* args */)
-    {
-        int numOfGames = 0;
-        this->i = 0;
-    }
-
+    } 
     Game::~Game()
     {
-        int numOfGame = 0;
+        numOfGames--;
     }
 }
