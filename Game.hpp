@@ -1,31 +1,23 @@
+#pragma once
+#include <string>
+#include <stdexcept>
 #include <iostream>
 #include <vector>
-#include <stdexcept>
-#include <string>
 #include <algorithm>
-// #include "Player.hpp"
-#pragma once
 using namespace std;
 
 namespace coup
 {
     class Player;
     class Game
-    {
-    private:
-        
+    {  
     public:
-        vector<string> playersList;
-        unsigned int i;
-        Game(/* args */);
-        // {
-        //     this->i = 0;
-        // };
-        vector<string> players();
-        string turn();
+        Game();
+        ~Game();  
         string winner();
-        // void addPlayer(player p);
-        ~Game();
+        string turn();
+        vector<string> playersList;
+        vector<string> players();
+        unsigned int i;
     };
-    
-} // namespace coup
+} 
