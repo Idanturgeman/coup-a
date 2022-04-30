@@ -14,17 +14,22 @@ using namespace std;
 
 TEST_CASE("Good input")
 {
+	static int numOfDukes = 0;
+	static int numOfAssassins = 0;
+	static int numOfAmbassadors = 0;
+	static int numOfCaptains = 0;
+	static int numOfContessas = 0;
     Game game{};
 	Duke duke{game, "Messi"};
-	int numOfDukes = 1;
+	numOfDukes++;
 	Assassin assassin{game, "Ronaldo"};
-	int numOfAssassins = 1;
+	numOfAssassins++;
 	Ambassador ambassador{game, "Neymar"};
-	int numOfAmbassadors = 1;
+	numOfAmbassadors++;
 	Captain captain{game, "Zidan"};
-	int numOfCaptains = 1;
+	numOfCaptains++;
 	Contessa contessa{game, "Pele"};
-	int numOfContessas = 1;
+	numOfContessas++;
 	duke.income();
 	CHECK(duke.coins() == 1);
 	assassin.income();
