@@ -25,18 +25,18 @@ namespace coup
     }
     void Player::income()
     {
-        this->_money++;
         numOfIncomes++;
+        this->_money++;
         this->_game->i = (this->_game->i + 1) % this->_game->playersList.size();
-       // int numOfIncome = 1;
+        numOfIncomes++;
 
     }
     void Player::foreign_aid()
     {
-        this->_money += 2;
         numOfForeign_aids++;
+        this->_money += 2;
         this->_game->i = (this->_game->i + 1) % this->_game->playersList.size();
-       // int numOfForeign_aid = 1;
+        numOfForeign_aids++;
 
     }
 
@@ -45,16 +45,16 @@ namespace coup
         numOfCoups++;
         for (unsigned int i = 0; i < this->_game->playersList.size(); i++)
             {
-                //int numOfCoup = 0;
+                numOfCoups++;
                 if (!p._name.compare(this->_game->playersList[i]))
                     {
-                        //int numOfCou = 1;
+                        numOfCoups++;
                         this->_game->playersList.erase(this->_game->playersList.begin() + i);
                         return;
                     }
             }
         throw invalid_argument("this player didn't exsict");
-        
+        numOfCoups++;
         this->_money -= 7;
     }
 
