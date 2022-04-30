@@ -16,10 +16,15 @@ TEST_CASE("Good input")
 {
     Game game{};
 	Duke duke{game, "Messi"};
+	int numOfDukes = 1;
 	Assassin assassin{game, "Ronaldo"};
+	int numOfAssassins = 1;
 	Ambassador ambassador{game, "Neymar"};
+	int numOfAmbassadors = 1;
 	Captain captain{game, "Zidan"};
+	int numOfCaptains = 1;
 	Contessa contessa{game, "Pele"};
+	int numOfContessas = 1;
 	duke.income();
 	CHECK(duke.coins() == 1);
 	assassin.income();
