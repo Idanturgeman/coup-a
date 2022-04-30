@@ -62,7 +62,4 @@ TEST_CASE("Good input")
 	CHECK(game.turn() == "Pele");
 	contessa.foreign_aid();
 	CHECK(contessa.coins() == 4);
-
-
-	
 }
