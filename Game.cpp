@@ -16,24 +16,22 @@ namespace coup{
     }
     string Game::turn()
     {
-        numOfTurns++;
+        int j = 0;
         if (this->playersList.size() == 0)
         {
             throw runtime_error("their is no players in this game");
         }
-        numOfTurns++;
         i = i % playersList.size();
         numOfTurns++;
         return this->playersList[this->i];
     }
     string Game::winner()
     {
-        numOfWinners++;
+        int j = 0;
         if (this->playersList.size() != 1)
         {
             throw runtime_error("their is no players in this game");
         }
-        numOfWinners++;
         i = i % playersList.size();
         numOfWinners++;
         return this->playersList[this->i];
